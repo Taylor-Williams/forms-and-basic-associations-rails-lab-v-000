@@ -52,7 +52,7 @@ class SongsController < ApplicationController
     @song.genre = Genre.find(:song_genre_id)
   end
 
-  def song_notes=(:song_notes)
+  def note_ids=(:song_notes)
     :song_notes.each do |note|
       if note != ""
         @song.notes << note
