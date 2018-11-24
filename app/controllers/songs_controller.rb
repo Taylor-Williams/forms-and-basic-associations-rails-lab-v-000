@@ -43,12 +43,12 @@ class SongsController < ApplicationController
     redirect_to songs_path
   end
 
-  def artist_name=(:song_artist_name)
-    @song.artist = Artist.find_or_create_by(:song_artist_name)
+  def artist_name=(song_artist_name)
+    @song.artist = Artist.find_or_create_by(song_artist_name)
   end
 
-  def genre_id=(:song_genre_id)
-    @song.genre = Genre.find(:song_genre_id)
+  def genre_id=(song_genre_id)
+    @song.genre = Genre.find(song_genre_id)
   end
 
   def note_contents=(:song_notes)
