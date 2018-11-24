@@ -51,8 +51,8 @@ class SongsController < ApplicationController
     @song.genre = Genre.find(song_genre_id)
   end
 
-  def note_contents=(:song_notes)
-    :song_notes.each do |note|
+  def note_contents=(song_notes)
+    song_notes.each do |note|
       if note != ""
         @song.notes << note
       end
