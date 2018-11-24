@@ -44,11 +44,11 @@ class SongsController < ApplicationController
   end
 
   private
-  def song_artist_name=(:song_artist_name)
+  def artist_name=(:song_artist_name)
     @song.artist = Artist.find_or_create_by(:song_artist_name)
   end
 
-  def song_genre_id=(:song_genre_id)
+  def genre_id=(:song_genre_id)
     @song.genre = Genre.find(:song_genre_id)
   end
 
