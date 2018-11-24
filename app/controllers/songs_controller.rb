@@ -12,8 +12,14 @@ class SongsController < ApplicationController
   end
 
   def create
-    @song = Song.new(song_params)
-
+    @song = Song.new(song_params[:title])
+    @song.artist = Artist.find_or_create_by(song_params[:song_artist_name])
+    @song.genre = Genre.find(song_params[:song_genre_id])
+    song_params[:song_notes].each do |note|
+      if note != ""
+        @song.notes << note
+      end
+    end
     if @song.save
       redirect_to @song
     else
