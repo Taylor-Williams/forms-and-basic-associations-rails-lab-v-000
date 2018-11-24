@@ -43,7 +43,7 @@ class SongsController < ApplicationController
     redirect_to songs_path
   end
 
-  def artist_name=(song_artist_name)
+  def artist=(song_artist_name)
     @song.artist = Artist.find_or_create_by(song_artist_name)
   end
 
